@@ -17,12 +17,20 @@ let tahun; // assign nilai variabel tahun disini! (dengan angka antara 1900 - 22
 
 //code switch case kamu disini
 
+/*
+if (tanggal >= 1 && tanggal <= 31) {
+    tanggal = tanggal;
+} else {
+    tanggal = 17;
+}
+*/
+// jika expression true cocok dengan case tanggal (if statement diatas di konversi menjadi switch statement)
 switch (true) {
-  case tanggal >= 1 && tanggal <= 31:
-    tanggal;
+  case tanggal >= 1 && tanggal <= 31: // cek apakah tanggal lebih besar dari 1 dan lebih kecil dari 31
+    tanggal; // kembalikan nilai tanggal
     break;
   default:
-    tanggal = 17;
+    tanggal = 17; // kembalikan nilai 17 jika expression tidak sesuai dengan case
 }
 
 switch (bulan) {

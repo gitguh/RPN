@@ -16,8 +16,8 @@ switch (expression){
 
 // cara kerja switch statement
 
-- switch expression hanya dievaluasi satu kali
-- nilai expression dibandingkan dengan nilai setiap case
+- switch expression hanya dievaluasi satu kali (yang dievaluasi hanya boolean)
+- nilai expression dibandingkan dengan nilai setiap case (jadi kita tidak mengevaluasi apakah case = true / false, tapi kita membandingkan apakah nilai expression == case)
 - jika nilai expression dan nilai casenya cocok, maka jalankan blok code tersebut
 - jila nilai expression dan nilai casenya tidak cocok, maka jalanakn block code default
 
@@ -40,3 +40,5 @@ switch (new Date().getDay()) {
   default:
     console.log("Looking forward to the Weekend");
 }
+
+// https://stackoverflow.com/questions/3463833/expression-inside-switch-case-statement
