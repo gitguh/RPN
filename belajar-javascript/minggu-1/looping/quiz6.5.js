@@ -117,8 +117,8 @@ let input = 5;
 console.log("Soal Kelima - Bintang Asteriks\n");
 
 let text = "";
-for (baris = 0; baris <= input; baris++) {
-  for (bintang = 0; bintang < baris; bintang++) {
+for (baris = 1; baris <= input; baris++) {
+  for (bintang = 1; bintang <= baris; bintang++) {
     text += "*";
   }
   text += "\n";
