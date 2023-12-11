@@ -64,62 +64,27 @@ function dataHandling2(data) {
   modifyData.splice(4, 1, "Pria", "SMA Internasional Metro");
   console.log(modifyData);
 
-  // if (dateOfBirth[1] === "05") {
-  //   dateOfBirth = `${dateOfBirth[0]} Mei ${dateOfBirth[2]}`
-  // }
-  // console.log(dateOfBirth)
-  switch (dateOfBirth[1]) {
-    case "01":
-      console.log("Januari");
-      break;
-    case "02":
-      console.log("Februari");
-      break;
-    case "03":
-      console.log("Maret");
-      break;
-    case "04":
-      console.log("April");
-      break;
-    case "05":
-      console.log("Mei");
-      break;
-    case "06":
-      console.log("Juni");
-      break;
-    case "07":
-      console.log("Juli");
-      break;
-    case "08":
-      console.log("Agustus");
-      break;
-    case "09":
-      console.log("September");
-      break;
-    case "10":
-      console.log("Oktober");
-      break;
-    case "11":
-      console.log("November");
-      break;
-    case "12":
-      console.log("Desember");
-      break;
-    default:
-      console.log(`${dateOfBirth.join("/")}`);
+  if (dateOfBirth[1] === "05") {
+    console.log("Mei")
   }
 
   // Referensi : https://www.freecodecamp.org/news/swap-two-array-elements-in-javascript/
-  // let swapArray = data[3].split("/");
-  // swapArray[0] = swapArray.splice(2, 1, swapArray[0])[0];
-  // console.log(swapArray);
 
   const swap = (arr, x, y) => {
     [arr[x], arr[y]] = [arr[y], arr[x]];
     return arr;
   };
 
-  console.log(swap(data[3].split("/"), 0, 2));
+  let firstSwap = swap(data[3].split("/"), 0, 2);
+  let secondSwap = swap(firstSwap, 1, 2)
+
+  console.log(secondSwap)
+
+  // Referensi : https://www.w3schools.com/js/js_array_methods.asp
+
+  // let year = dateOfBirth.pop();
+  // dateOfBirth.unshift(year);
+  // console.log(dateOfBirth);
 
   console.log(dateOfBirth.join("-"));
 
