@@ -101,27 +101,31 @@ function groupAnimals(animals) {
   animals.sort();
   
   let result = []
+  let groupAnimal = []
 
   for (let i = 0; i < animals.length; i++) {
     let animal = animals[i];
-    let firstLetter = animal[0].toLowerCase()
-    let groupAnimal = []
 
-    if (result[firstLetter] === undefined) {
-      groupAnimal.push(animal)
-      result[firstLetter] = groupAnimal
-    } else {
-      result[firstLetter].push(animal);
+    if (i === 0) { // iterasi pertama sudah pasti groupAnimal punya animal dengan huruf a
+      groupAnimal.push(animal) // perbarui nilai groupAnimal (animal dengan huruf a)
+    } else if (groupAnimal[0][0] !== animal[0]) { // jika huruf animal berbeda dengan huruf groupAnimal
+      result.push(groupAnimal) // perbarui nilai result (groupAnimal berhuruf a)
+      // console.log(result)
+      groupAnimal=[animal] // perbarui nilai groupAnimal (animal dengan huruf c)
+      // console.log(groupAnimal)
+    } else { // untuk animal yang huruf pertamanya sama
+      groupAnimal.push(animal);
     }
-  }
 
+  }
+  result.push(groupAnimal) // sisa animal yang belum masuk groupAnimal (animal dengan huruf k, yang belum di push) 
   return result
 
 }
-
 // TEST CASES
 console.log("Soal 3")
 console.log(groupAnimals(['cacing', 'ayam', 'kuda', 'anoa', 'kancil']));
 // [ ['ayam', 'anoa'], ['cacing'], ['kuda', 'kancil'] ]
 console.log(groupAnimals(['cacing', 'ayam', 'kuda', 'anoa', 'kancil', 'unta', 'cicak' ]));
 // [ ['ayam', 'anoa'], ['cacing', 'cicak'], ['kuda', 'kancil'], ['unta'] ]
+console.log(" ")
