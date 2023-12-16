@@ -8,8 +8,6 @@ Jika tidak ditemukan 'x' sama sekali, function akan me-return nilai 0.
 /*
 Referensi: 
 https://www.geeksforgeeks.org/find-the-minimum-distance-between-two-numbers/
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number
 https://www.w3resource.com/c-programming-exercises/array/c-array-exercise-84.php
 
 arr = ['o', ' ', 'x']
@@ -93,8 +91,32 @@ console.log(" ")
 diberikan sebuah function groupAnimals(animals) yang menerima satu parameter berupa array,
 fungsi ini akan me-return array 2 dimensi
 */
+
+/*
+Referensi:
+https://stackoverflow.com/questions/71178336/group-array-of-strings-by-first-letter 
+*/
 function groupAnimals(animals) {
-  // you can only write your code here!
+
+  animals.sort();
+  
+  let result = []
+
+  for (let i = 0; i < animals.length; i++) {
+    let animal = animals[i];
+    let firstLetter = animal[0].toLowerCase()
+    let groupAnimal = []
+
+    if (result[firstLetter] === undefined) {
+      groupAnimal.push(animal)
+      result[firstLetter] = groupAnimal
+    } else {
+      result[firstLetter].push(animal);
+    }
+  }
+
+  return result
+
 }
 
 // TEST CASES
