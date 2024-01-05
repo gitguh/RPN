@@ -2,7 +2,35 @@
 Diberikan sebuah function cariModus(arr) yang menerima sebuah array angka. Function akan me-return modus dari array atau deret angka tersebut. Modus adalah angka dari sebuah deret yang paling banyak atau paling sering muncul. Contoh, modus dari [10, 4, 5, 2, 4] adalah 4. Jika modus tidak ditemukan, function akan me-return -1. Apabila ditemukan lebih dari dua nilai modus, tampilkan nilai modus yang paling pertama muncul (dihitung dari kiri ke kanan). Dan apabila dialam modus hanya ada 1 nilai yang sama maka function akan me-return -1, Contohnya [1, 1, 1] adalah -1.
 */
 function cariModus(arr) {
-  // you can only write your code here!
+
+  let mode
+  let result = 0
+
+  for (let i = 0; i < arr.length; i++) {
+
+    let count = 0
+
+    for (let j = 0; j < arr.length; j++) {
+
+      if (arr[i] === arr[j]) {
+        count++
+      }
+      
+    }
+
+    if (count > result) {
+      result = count
+      mode = arr[i]
+    }
+    
+  }
+  
+  if (result === 1 || result === arr.length) {
+    return -1
+  } else {
+    return mode
+  }
+
 }
 
 // TEST CASES

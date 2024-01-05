@@ -1,7 +1,27 @@
 //sistem ubah hurufnya misal huruf a diubah menjadi b, c menjadi d, b menjadi c, z menjadi a
 //intinya ubah huruf menjadi huruf setelahnya
 function ubahHuruf(kata) {
-  // you can only write your code here!
+
+  const alphabet = "abcdefghijklmnopqrstuvwxyz"
+  let result = ""
+
+  for (let i = 0; i < kata.length; i++) {
+
+    for (let j = 0; j  < alphabet.length; j ++) {
+
+      if (kata[i] === alphabet[j]) {
+        result += alphabet[j + 1]
+      } else if (kata[i] === "z") {
+        result += alphabet[0]
+        break
+      } 
+
+    }
+
+  }
+
+  return result
+
 }
 
 // TEST CASES
