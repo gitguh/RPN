@@ -4,10 +4,6 @@ function highestScore (students) {
 
   let result = {}
 
-  if (students.length < 1) {
-    return result
-  }
-
   for (let i = 0; i < students.length; i++) {
 
     const student = students[i]
@@ -55,7 +51,7 @@ console.log(highestScore([
   },
   {
     name: 'Sergei',
-    score: 742,
+    score: 74,
     class: 'foxes'
   },
   {
